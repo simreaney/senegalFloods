@@ -43,7 +43,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:17, minZoom:8
-        }).fitBounds([[14.706133749762555,-17.083523985059024],[14.902349742424958,-16.764546436073317]]);
+        }).fitBounds([[14.706652240881866,-17.024921989495336],[14.901890255699579,-16.823106028468008]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -85,10 +85,10 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        map.createPane('pane_GoogleHybrid_0');
-        map.getPane('pane_GoogleHybrid_0').style.zIndex = 400;
-        var layer_GoogleHybrid_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
-            pane: 'pane_GoogleHybrid_0',
+        map.createPane('pane_GoogleRoad_0');
+        map.getPane('pane_GoogleRoad_0').style.zIndex = 400;
+        var layer_GoogleRoad_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleRoad_0',
             opacity: 1.0,
             attribution: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
             minZoom: 8,
@@ -96,16 +96,20 @@
             minNativeZoom: 0,
             maxNativeZoom: 20
         });
-        layer_GoogleHybrid_0;
-        map.addLayer(layer_GoogleHybrid_0);
-        map.createPane('pane_T_FABDEM_UTM_1');
-        map.getPane('pane_T_FABDEM_UTM_1').style.zIndex = 401;
-        var img_T_FABDEM_UTM_1 = 'data/T_FABDEM_UTM_1.png';
-        var img_bounds_T_FABDEM_UTM_1 = [[14.711610800763319,-17.000164919982137],[14.897218050769476,-16.847566043179167]];
-        var layer_T_FABDEM_UTM_1 = new L.imageOverlay(img_T_FABDEM_UTM_1,
-                                              img_bounds_T_FABDEM_UTM_1,
-                                              {pane: 'pane_T_FABDEM_UTM_1'});
-        bounds_group.addLayer(layer_T_FABDEM_UTM_1);
+        layer_GoogleRoad_0;
+        map.createPane('pane_GoogleHybrid_1');
+        map.getPane('pane_GoogleHybrid_1').style.zIndex = 401;
+        var layer_GoogleHybrid_1 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleHybrid_1',
+            opacity: 1.0,
+            attribution: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
+            minZoom: 8,
+            maxZoom: 17,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_GoogleHybrid_1;
+        map.addLayer(layer_GoogleHybrid_1);
         function pop_t_Catch2_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -146,23 +150,15 @@
         });
         bounds_group.addLayer(layer_t_Catch2_2);
         map.addLayer(layer_t_Catch2_2);
-        map.createPane('pane_T_lnFacc_3');
-        map.getPane('pane_T_lnFacc_3').style.zIndex = 403;
-        var img_T_lnFacc_3 = 'data/T_lnFacc_3.png';
-        var img_bounds_T_lnFacc_3 = [[14.711611923515648,-17.00016603597961],[14.89721917350962,-16.84756715800047]];
-        var layer_T_lnFacc_3 = new L.imageOverlay(img_T_lnFacc_3,
-                                              img_bounds_T_lnFacc_3,
-                                              {pane: 'pane_T_lnFacc_3'});
-        bounds_group.addLayer(layer_T_lnFacc_3);
-        map.createPane('pane_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_4');
-        map.getPane('pane_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_4').style.zIndex = 404;
-        var img_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_4 = 'data/SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_4.png';
-        var img_bounds_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_4 = [[14.711473854782692,-17.000303276198093],[14.897084202306926,-16.84770191243357]];
-        var layer_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_4 = new L.imageOverlay(img_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_4,
-                                              img_bounds_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_4,
-                                              {pane: 'pane_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_4'});
-        bounds_group.addLayer(layer_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_4);
-        map.addLayer(layer_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_4);
+        map.createPane('pane_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_3');
+        map.getPane('pane_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_3').style.zIndex = 403;
+        var img_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_3 = 'data/SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_3.png';
+        var img_bounds_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_3 = [[14.711473854782692,-17.000303276198093],[14.897084202306926,-16.84770191243357]];
+        var layer_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_3 = new L.imageOverlay(img_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_3,
+                                              img_bounds_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_3,
+                                              {pane: 'pane_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_3'});
+        bounds_group.addLayer(layer_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_3);
+        map.addLayer(layer_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_3);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -175,12 +171,10 @@
         .title += 'Search for a place';
         var baseMaps = {};
         var overlaysTree = [
-            {label: "SenegalTheis2D_Domain 1_output-domain 1_sup_Depth_10", layer: layer_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_4},
-            {label: "T_lnFacc", layer: layer_T_lnFacc_3},
+            {label: "SenegalTheis2D_Domain 1_output-domain 1_sup_Depth_10", layer: layer_SenegalTheis2D_Domain1_outputdomain1_sup_Depth_10_3},
             {label: '<img src="legend/t_Catch2_2.png" /> t_Catch2', layer: layer_t_Catch2_2},
-        {label: '<b>T_DEM</b>', selectAllCheckbox: true, children: [
-            {label: "T_FABDEM_UTM", layer: layer_T_FABDEM_UTM_1},]},
-            {label: "Google Hybrid", layer: layer_GoogleHybrid_0},]
+            {label: "Google Hybrid", layer: layer_GoogleHybrid_1},
+            {label: "Google Road", layer: layer_GoogleRoad_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
